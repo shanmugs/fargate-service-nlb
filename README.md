@@ -2,20 +2,20 @@
 AWS CDK example with a ECS Fargate service
 
 
-## Configure AWS creds 
+### Configure AWS creds 
 $ aws configure
 
-## Configure AWS CDK for typescript 
+### Configure AWS CDK for typescript 
 $ cdk init --language=typescript
 
-## Build 
+### Build 
 $ npm run build
 
-## Check the cloud formation script
+### Check the cloud formation script
 $ cdk synth
 
-## Run and Deploy the infra
+### Run and Deploy the infra
 $ cdk deploy
 
-## To clean up 
+### To clean up 
 $ aws cloudformation delete-stack --stack-name search-api-service
