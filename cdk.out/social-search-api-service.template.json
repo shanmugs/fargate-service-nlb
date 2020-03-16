@@ -1,0 +1,672 @@
+{
+  "Resources": {
+    "Vpc8378EB38": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/Resource"
+      }
+    },
+    "VpcPublicSubnet1Subnet5C2D37C4": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/18",
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet1"
+          },
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/Subnet"
+      }
+    },
+    "VpcPublicSubnet1RouteTable6C95E38E": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/RouteTable"
+      }
+    },
+    "VpcPublicSubnet1RouteTableAssociation97140677": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+        },
+        "SubnetId": {
+          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/RouteTableAssociation"
+      }
+    },
+    "VpcPublicSubnet1DefaultRoute3DA9E72A": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "VpcIGWD7BA715C"
+        }
+      },
+      "DependsOn": [
+        "VpcVPCGWBF912B6E"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/DefaultRoute"
+      }
+    },
+    "VpcPublicSubnet1EIPD7E02669": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/EIP"
+      }
+    },
+    "VpcPublicSubnet1NATGateway4D7517AA": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "VpcPublicSubnet1EIPD7E02669",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet1/NATGateway"
+      }
+    },
+    "VpcPublicSubnet2Subnet691E08A3": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.64.0/18",
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet2"
+          },
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/Subnet"
+      }
+    },
+    "VpcPublicSubnet2RouteTable94F7E489": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/RouteTable"
+      }
+    },
+    "VpcPublicSubnet2RouteTableAssociationDD5762D8": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+        },
+        "SubnetId": {
+          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/RouteTableAssociation"
+      }
+    },
+    "VpcPublicSubnet2DefaultRoute97F91067": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "VpcIGWD7BA715C"
+        }
+      },
+      "DependsOn": [
+        "VpcVPCGWBF912B6E"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/DefaultRoute"
+      }
+    },
+    "VpcPublicSubnet2EIP3C605A87": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/EIP"
+      }
+    },
+    "VpcPublicSubnet2NATGateway9182C01D": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "VpcPublicSubnet2EIP3C605A87",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PublicSubnet2/NATGateway"
+      }
+    },
+    "VpcPrivateSubnet1Subnet536B997A": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.128.0/18",
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PrivateSubnet1"
+          },
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet1/Subnet"
+      }
+    },
+    "VpcPrivateSubnet1RouteTableB2C5B500": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet1/RouteTable"
+      }
+    },
+    "VpcPrivateSubnet1RouteTableAssociation70C59FA6": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+        },
+        "SubnetId": {
+          "Ref": "VpcPrivateSubnet1Subnet536B997A"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet1/RouteTableAssociation"
+      }
+    },
+    "VpcPrivateSubnet1DefaultRouteBE02A9ED": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "VpcPublicSubnet1NATGateway4D7517AA"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet1/DefaultRoute"
+      }
+    },
+    "VpcPrivateSubnet2Subnet3788AAA1": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.192.0/18",
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PrivateSubnet2"
+          },
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet2/Subnet"
+      }
+    },
+    "VpcPrivateSubnet2RouteTableA678073B": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc/PrivateSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet2/RouteTable"
+      }
+    },
+    "VpcPrivateSubnet2RouteTableAssociationA89CAD56": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+        },
+        "SubnetId": {
+          "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet2/RouteTableAssociation"
+      }
+    },
+    "VpcPrivateSubnet2DefaultRoute060D2087": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "VpcPublicSubnet2NATGateway9182C01D"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/PrivateSubnet2/DefaultRoute"
+      }
+    },
+    "VpcIGWD7BA715C": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "social-search-api-service/Vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/IGW"
+      }
+    },
+    "VpcVPCGWBF912B6E": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        },
+        "InternetGatewayId": {
+          "Ref": "VpcIGWD7BA715C"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/Vpc/VPCGW"
+      }
+    },
+    "socialapicluster6E07F12E": {
+      "Type": "AWS::ECS::Cluster",
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/social-api-cluster/Resource"
+      }
+    },
+    "socialapitaskTaskRole8DCCE688": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/social-api-task/TaskRole/Resource"
+      }
+    },
+    "socialapitask9848727B": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Essential": true,
+            "Image": "487213271675.dkr.ecr.us-west-2.amazonaws.com/search-api:latest",
+            "Name": "searchContainer",
+            "PortMappings": [
+              {
+                "ContainerPort": 7070,
+                "HostPort": 7070,
+                "Protocol": "tcp"
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "Family": "socialsearchapiservicesocialapitask937732FC",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "socialapitaskTaskRole8DCCE688",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/social-api-task/Resource"
+      }
+    },
+    "searchapinlb25AE82B3": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "Scheme": "internet-facing",
+        "Subnets": [
+          {
+            "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+          },
+          {
+            "Ref": "VpcPublicSubnet2Subnet691E08A3"
+          }
+        ],
+        "Type": "network"
+      },
+      "DependsOn": [
+        "VpcPublicSubnet1DefaultRoute3DA9E72A",
+        "VpcPublicSubnet2DefaultRoute97F91067"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/search-api-nlb/Resource"
+      }
+    },
+    "searchapinlbsearchapilistener72DC346F": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "searchapinlbsearchapilistenersearchapitgGroupEFBCC768"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "searchapinlb25AE82B3"
+        },
+        "Port": 7070,
+        "Protocol": "TCP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/search-api-nlb/search-api-listener/Resource"
+      }
+    },
+    "searchapinlbsearchapilistenersearchapitgGroupEFBCC768": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 7070,
+        "Protocol": "TCP",
+        "TargetGroupAttributes": [
+          {
+            "Key": "deregistration_delay.timeout_seconds",
+            "Value": "3"
+          }
+        ],
+        "Targets": [
+          {
+            "AvailabilityZone": "us-west-1a",
+            "Id": "10.0.0.10",
+            "Port": 7070
+          }
+        ],
+        "TargetType": "ip",
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/search-api-nlb/search-api-listener/search-api-tgGroup/Resource"
+      }
+    },
+    "searchapifgserviceServiceE5CD88F3": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "socialapicluster6E07F12E"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 1,
+        "EnableECSManagedTags": false,
+        "HealthCheckGracePeriodSeconds": 60,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "searchContainer",
+            "ContainerPort": 7070,
+            "TargetGroupArn": {
+              "Ref": "searchapinlbsearchapilistenersearchapitgGroupEFBCC768"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "DISABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "searchapifgserviceSecurityGroupDBCAC3BF",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              {
+                "Ref": "VpcPrivateSubnet1Subnet536B997A"
+              },
+              {
+                "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+              }
+            ]
+          }
+        },
+        "TaskDefinition": {
+          "Ref": "socialapitask9848727B"
+        }
+      },
+      "DependsOn": [
+        "searchapinlbsearchapilistener72DC346F",
+        "searchapinlbsearchapilistenersearchapitgGroupEFBCC768"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/search-api-fg-service/Service"
+      }
+    },
+    "searchapifgserviceSecurityGroupDBCAC3BF": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "social-search-api-service/search-api-fg-service/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": {
+          "Ref": "Vpc8378EB38"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "social-search-api-service/search-api-fg-service/SecurityGroup/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "ClusterARN": {
+      "Value": {
+        "Fn::GetAtt": [
+          "socialapicluster6E07F12E",
+          "Arn"
+        ]
+      }
+    }
+  }
+}

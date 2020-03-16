@@ -1,0 +1,898 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "search-api-service": {
+        "id": "search-api-service",
+        "path": "search-api-service",
+        "children": {
+          "Vpc": {
+            "id": "Vpc",
+            "path": "search-api-service/Vpc",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/Vpc/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "search-api-service/Vpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "search-api-service/Vpc/PublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "search-api-service/Vpc/PublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "search-api-service/Vpc/PublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "search-api-service/Vpc/PublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "search-api-service/Vpc/PublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "search-api-service/Vpc/PublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VpcIGWD7BA715C"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "search-api-service/Vpc/PublicSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "search-api-service/Vpc/PublicSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "VpcPublicSubnet1EIPD7E02669",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "search-api-service/Vpc/PublicSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "search-api-service/Vpc/PublicSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.64.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet2"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "search-api-service/Vpc/PublicSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "search-api-service/Vpc/PublicSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "search-api-service/Vpc/PublicSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "search-api-service/Vpc/PublicSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VpcIGWD7BA715C"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "search-api-service/Vpc/PublicSubnet2/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "search-api-service/Vpc/PublicSubnet2/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "VpcPublicSubnet2EIP3C605A87",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "search-api-service/Vpc/PrivateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "search-api-service/Vpc/PrivateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.128.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PrivateSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "search-api-service/Vpc/PrivateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "search-api-service/Vpc/PrivateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "search-api-service/Vpc/PrivateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "search-api-service/Vpc/PrivateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VpcPublicSubnet1NATGateway4D7517AA"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "search-api-service/Vpc/PrivateSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "search-api-service/Vpc/PrivateSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.192.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PrivateSubnet2"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "search-api-service/Vpc/PrivateSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "search-api-service/Vpc/PrivateSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "search-api-service/Vpc/PrivateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "search-api-service/Vpc/PrivateSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "search-api-service/Vpc/PrivateSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VpcPublicSubnet2NATGateway9182C01D"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "search-api-service/Vpc/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "search-api-service/Vpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "search-api-service/Vpc/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "Vpc8378EB38"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "VpcIGWD7BA715C"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "search-api-exec-role": {
+            "id": "search-api-exec-role",
+            "path": "search-api-service/search-api-exec-role",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/search-api-exec-role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ecs-tasks.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "roleName": "social-api-role"
+                  }
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "search-api-service/search-api-exec-role/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "search-api-service/search-api-exec-role/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "ecr:GetAuthorizationToken",
+                                "ecr:BatchCheckLayerAvailability",
+                                "ecr:GetDownloadUrlForLayer",
+                                "ecr:BatchGetImage",
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": "*"
+                            },
+                            {
+                              "Action": [
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":logs:",
+                                    {
+                                      "Ref": "AWS::Region"
+                                    },
+                                    ":",
+                                    {
+                                      "Ref": "AWS::AccountId"
+                                    },
+                                    ":log-group:/ecs/search-api-task"
+                                  ]
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "searchapiexecroleDefaultPolicy58DEFEF0",
+                        "roles": [
+                          {
+                            "Ref": "searchapiexecrole9CD0FE1F"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "social-api-cluster": {
+            "id": "social-api-cluster",
+            "path": "search-api-service/social-api-cluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/social-api-cluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {
+                    "clusterName": "social-api-cluster"
+                  }
+                }
+              }
+            }
+          },
+          "search-api-task": {
+            "id": "search-api-task",
+            "path": "search-api-service/search-api-task",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/search-api-task/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "essential": true,
+                        "image": "487213271675.dkr.ecr.us-west-2.amazonaws.com/search-api:latest",
+                        "name": "search-api-container",
+                        "portMappings": [
+                          {
+                            "containerPort": 7070,
+                            "hostPort": 7070,
+                            "protocol": "tcp"
+                          }
+                        ],
+                        "logConfiguration": {
+                          "logDriver": "awslogs",
+                          "options": {
+                            "awslogs-group": "/ecs/search-api-task",
+                            "awslogs-stream-prefix": "ecs",
+                            "awslogs-region": {
+                              "Ref": "AWS::Region"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "cpu": "256",
+                    "executionRoleArn": {
+                      "Fn::GetAtt": [
+                        "searchapiexecrole9CD0FE1F",
+                        "Arn"
+                      ]
+                    },
+                    "family": "search-api-task",
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "searchapiexecrole9CD0FE1F",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "search-api-container": {
+                "id": "search-api-container",
+                "path": "search-api-service/search-api-task/search-api-container"
+              }
+            }
+          },
+          "search-api-log-group": {
+            "id": "search-api-log-group",
+            "path": "search-api-service/search-api-log-group"
+          },
+          "search-api-nlb": {
+            "id": "search-api-nlb",
+            "path": "search-api-service/search-api-nlb",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/search-api-nlb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "search-api-nlb",
+                    "scheme": "internal",
+                    "subnets": [
+                      {
+                        "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                      },
+                      {
+                        "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                      }
+                    ],
+                    "type": "network"
+                  }
+                }
+              },
+              "search-api-listener": {
+                "id": "search-api-listener",
+                "path": "search-api-service/search-api-nlb/search-api-listener",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "search-api-service/search-api-nlb/search-api-listener/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "targetGroupArn": {
+                              "Ref": "searchapinlbsearchapilistenersearchapitgGroupEFBCC768"
+                            },
+                            "type": "forward"
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "searchapinlb25AE82B3"
+                        },
+                        "port": 7070,
+                        "protocol": "TCP"
+                      }
+                    }
+                  },
+                  "search-api-tgGroup": {
+                    "id": "search-api-tgGroup",
+                    "path": "search-api-service/search-api-nlb/search-api-listener/search-api-tgGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "search-api-service/search-api-nlb/search-api-listener/search-api-tgGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "name": "search-api-tg",
+                            "port": 7070,
+                            "protocol": "TCP",
+                            "targetGroupAttributes": [
+                              {
+                                "key": "deregistration_delay.timeout_seconds",
+                                "value": "360"
+                              }
+                            ],
+                            "targetType": "ip",
+                            "vpcId": {
+                              "Ref": "Vpc8378EB38"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "search-api-sg": {
+            "id": "search-api-sg",
+            "path": "search-api-service/search-api-sg",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "search-api-service/search-api-sg/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "search-api-service/search-api-sg",
+                    "groupName": "search-sg",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 80,
+                        "toPort": 80,
+                        "description": "SSH frm anywhere"
+                      },
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 7070,
+                        "toPort": 7070,
+                        "description": ""
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "Vpc8378EB38"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "search-api-fg-service": {
+            "id": "search-api-fg-service",
+            "path": "search-api-service/search-api-fg-service",
+            "children": {
+              "Service": {
+                "id": "Service",
+                "path": "search-api-service/search-api-fg-service/Service",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                  "aws:cdk:cloudformation:props": {
+                    "cluster": {
+                      "Ref": "socialapicluster6E07F12E"
+                    },
+                    "deploymentConfiguration": {
+                      "maximumPercent": 200,
+                      "minimumHealthyPercent": 50
+                    },
+                    "desiredCount": 1,
+                    "enableEcsManagedTags": false,
+                    "healthCheckGracePeriodSeconds": 60,
+                    "launchType": "FARGATE",
+                    "loadBalancers": [
+                      {
+                        "targetGroupArn": {
+                          "Ref": "searchapinlbsearchapilistenersearchapitgGroupEFBCC768"
+                        },
+                        "containerName": "search-api-container",
+                        "containerPort": 7070
+                      }
+                    ],
+                    "networkConfiguration": {
+                      "awsvpcConfiguration": {
+                        "assignPublicIp": "ENABLED",
+                        "subnets": [
+                          {
+                            "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                          },
+                          {
+                            "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                          }
+                        ],
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "searchapisgB52DBC6B",
+                              "GroupId"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "serviceName": "search-api-svc",
+                    "taskDefinition": {
+                      "Ref": "searchapitask0EA11EF7"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "ClusterARN: ": {
+            "id": "ClusterARN: ",
+            "path": "search-api-service/ClusterARN: "
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,805 @@
+{
+  "version": "1.21.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "search-api-service": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "search-api-service.template.json"
+      },
+      "metadata": {
+        "/search-api-service/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc8378EB38",
+            "trace": [
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:286:25)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1Subnet5C2D37C4",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTable6C95E38E",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTableAssociation97140677",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1DefaultRoute3DA9E72A",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:616:23)",
+              "Vpc.publicSubnets.forEach.publicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:317:30)",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:316:32)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1EIPD7E02669",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:737:27)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:52:33)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1NATGateway4D7517AA",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:735:21)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:52:33)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2Subnet691E08A3",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTable94F7E489",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTableAssociationDD5762D8",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PublicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:726:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2DefaultRoute97F91067",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:616:23)",
+              "Vpc.publicSubnets.forEach.publicSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:317:30)",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:316:32)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2EIP3C605A87",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:737:27)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:52:33)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2NATGateway9182C01D",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:735:21)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:52:33)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1Subnet536B997A",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableB2C5B500",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableAssociation70C59FA6",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1DefaultRouteBE02A9ED",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:657:23)",
+              "NatGateway.configureSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:63:16)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:18)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2Subnet3788AAA1",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableA678073B",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableAssociationA89CAD56",
+            "trace": [
+              "new Subnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PrivateSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:753:9)",
+              "availabilityZones.forEach (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:43)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:485:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2DefaultRoute060D2087",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:657:23)",
+              "NatGateway.configureSubnet (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:63:16)",
+              "NatGateway.configureNat (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:18)",
+              "Vpc.createNatGateways (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:463:18)",
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:322:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcIGWD7BA715C",
+            "trace": [
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:310:25)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcVPCGWBF912B6E",
+            "trace": [
+              "new Vpc (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:312:25)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:15:15)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-exec-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapiexecrole9CD0FE1F",
+            "trace": [
+              "new Role (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-iam/lib/role.js:41:22)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:17:26)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-exec-role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapiexecroleDefaultPolicy58DEFEF0",
+            "trace": [
+              "new Policy (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
+              "Role.addToPolicy (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-iam/lib/role.js:160:34)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:21:18)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/social-api-cluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialapicluster6E07F12E",
+            "trace": [
+              "new Cluster (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/cluster.js:33:25)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:32:25)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-task/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapitask0EA11EF7",
+            "trace": [
+              "new TaskDefinition (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:68:25)",
+              "new FargateTaskDefinition (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:18:9)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:34:25)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-task/search-api-container": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Proper policies need to be attached before pulling from ECR repository, or use 'fromEcrRepository'.",
+            "trace": [
+              "ConstructNode.addWarning (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/core/lib/construct.js:277:14)",
+              "RepositoryImage.bind (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/images/repository.js:27:24)",
+              "new ContainerDefinition (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:161:16)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:49:33)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-nlb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapinlb25AE82B3",
+            "trace": [
+              "new BaseLoadBalancer (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-load-balancer.js:24:26)",
+              "new NetworkLoadBalancer (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:44:9)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:60:20)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-nlb/search-api-listener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapinlbsearchapilistener72DC346F",
+            "trace": [
+              "new BaseListener (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:12:26)",
+              "new NetworkListener (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-listener.js:25:9)",
+              "NetworkLoadBalancer.addListener (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:57:16)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:66:29)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-nlb/search-api-listener/search-api-tgGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapinlbsearchapilistenersearchapitgGroupEFBCC768",
+            "trace": [
+              "new TargetGroupBase (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:31:25)",
+              "new NetworkTargetGroup (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-target-group.js:12:9)",
+              "NetworkListener.addTargets (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-listener.js:70:23)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:87:18)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-sg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapisgB52DBC6B",
+            "trace": [
+              "new SecurityGroup (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:173:30)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:70:26)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/search-api-fg-service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "searchapifgserviceServiceE5CD88F3",
+            "trace": [
+              "new BaseService (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:110:25)",
+              "new FargateService (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:35:9)",
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:79:32)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ],
+        "/search-api-service/ClusterARN: ": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ClusterARN",
+            "trace": [
+              "new FargateServiceNLB (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:93:9)",
+              "Object.<anonymous> (/home/soumarshi/aws-cdk-examples/typescript/ecs/fargate-service-nlb/index.js:97:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/aws-ecs": "1.26.0",
+      "@aws-cdk/aws-applicationautoscaling": "1.26.0",
+      "@aws-cdk/core": "1.26.0",
+      "@aws-cdk/cx-api": "1.26.0",
+      "@aws-cdk/aws-iam": "1.26.0",
+      "@aws-cdk/region-info": "1.26.0",
+      "@aws-cdk/aws-autoscaling-common": "1.26.0",
+      "@aws-cdk/aws-cloudwatch": "1.26.0",
+      "@aws-cdk/aws-ec2": "1.26.0",
+      "@aws-cdk/aws-ssm": "1.26.0",
+      "@aws-cdk/aws-logs": "1.26.0",
+      "@aws-cdk/aws-s3": "1.26.0",
+      "@aws-cdk/aws-events": "1.26.0",
+      "@aws-cdk/aws-kms": "1.26.0",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.26.0",
+      "@aws-cdk/aws-servicediscovery": "1.26.0",
+      "@aws-cdk/aws-ecr-assets": "1.26.0",
+      "@aws-cdk/assets": "1.26.0",
+      "@aws-cdk/aws-ecr": "1.26.0",
+      "@aws-cdk/aws-autoscaling": "1.26.0",
+      "@aws-cdk/aws-autoscaling-hooktargets": "1.26.0",
+      "@aws-cdk/aws-sns": "1.26.0",
+      "@aws-cdk/aws-sns-subscriptions": "1.26.0",
+      "@aws-cdk/aws-lambda": "1.26.0",
+      "@aws-cdk/aws-sqs": "1.26.0",
+      "@aws-cdk/aws-s3-assets": "1.26.0",
+      "jsii-runtime": "node.js/v10.16.1"
+    }
+  }
+}
