@@ -1,5 +1,5 @@
 # fargate-service-nlb
-AWS CDK example with a ECS Fargate service
+AWS CDK example with a ECS Fargate service having a Network load balancer
 
 
 ### Configure AWS creds 
